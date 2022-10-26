@@ -9,7 +9,7 @@ const Courses = () => {
 
                 </Col>
                 <Col lg='3' className='mt-5'>
-                    <Button>Sign In With Google</Button><br></br><br />
+                    <Button>Get Premium Access</Button><br></br><br />
                 </Col>
             </Row>
         </Container>

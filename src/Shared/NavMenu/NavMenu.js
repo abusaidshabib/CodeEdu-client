@@ -4,14 +4,17 @@ import { HiSun } from 'react-icons/hi';
 import { BsFillMoonFill } from 'react-icons/bs';
 import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const NavMenu = () => {
+    const { logOut,user } = useContext(AuthContext);
 
     const renderTooltip = (props) => (
 
         <Tooltip id="button-tooltip" {...props}
         >
-            Simple Tooltip
+            {user?.email}
         </Tooltip>
     );
 
@@ -31,12 +34,25 @@ const NavMenu = () => {
                         <Link to="/faq" className='nav-link'>FAQ</Link>
                     </Nav>
                     <Nav>
-                        <Link className='nav-link' to='/login'>
-                            <Button variant='primary'>LOG IN</Button>
-                        </Link>
-                        <Link className='nav-link' to='/register'>
-                            <Button variant='primary'>REGISTER</Button>
-                        </Link>
+                        {
+                            user?.uid ?
+                                <>
+                                    <Link className='nav-link'>
+                                        <Button onClick={logOut} variant='primary'>LogOut</Button>
+                                    </Link>
+                                </>
+                                :
+                                <>
+                                    <Link className='nav-link' to='/login'>
+                                        <Button variant='primary'>LOG IN</Button>
+                                    </Link>
+                                    <Link className='nav-link' to='/register'>
+                                        <Button variant='primary'>REGISTER</Button>
+                                    </Link>
+                                </>
+
+
+                        }
                         <div className='nav-link'>
                             <OverlayTrigger
                                 placement="right"
@@ -44,7 +60,12 @@ const NavMenu = () => {
                                 overlay={renderTooltip}
                             >
                                 <Nav.Link>
-                                    <FaUserAlt></FaUserAlt>
+                                    {
+                                        user?.photoURL?
+                                        <img src={user.photoURL} class="img-fluid img-thumbnail" alt=""></img>
+                                        :
+                                        <FaUserAlt></FaUserAlt>
+                                    }
                                 </Nav.Link>
 
                             </OverlayTrigger>

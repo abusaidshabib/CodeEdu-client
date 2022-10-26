@@ -1,8 +1,13 @@
 import React from 'react';
+import { useContext } from 'react';
+import { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const Register = () => {
+    const [error, setError] = useState(null);
+    const {createUser} = useContext(AuthContext);
 
     const handleSignUp = (event) => {
         event.preventDefault();
@@ -12,7 +17,27 @@ const Register = () => {
         const password = form.password.value;
         const confirm = form.confirmPass.value;
         const url = form.url.value;
-        console.log(email, password);
+
+        if(password.length < 6){
+            setError('password should be 6 character or more');
+            return;
+        }
+
+        if(password!== confirm){
+            setError('Password and Confirm password did not match');
+            return;
+        }
+
+        createUser (email, password)
+        .then(result => {
+            const user  = result.user;
+            console.log(user);
+            form.reset();
+        })
+        .catch(error =>{
+            console.error(error);
+            setError(error.code);
+        });
     }
 
     return (
@@ -48,7 +73,7 @@ const Register = () => {
                             SignUp
                         </Button><br></br><br></br>
                         <Form.Text className="text-danger">
-                            Errors here
+                            <p>{error}</p>
                         </Form.Text>
                     </Form>
                     <p>Already have an account <Link to='/login'>login form here</Link> </p>
