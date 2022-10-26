@@ -4,12 +4,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
-import { HiSun, HiOutlineUserCircle } from 'react-icons/hi';
+import { HiSun } from 'react-icons/hi';
 import { BsFillMoonFill } from 'react-icons/bs';
 import Button from 'react-bootstrap/Button';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import { Link } from 'react-router-dom';
+import {FaUserAlt} from 'react-icons/fa';
 
 
 
@@ -31,10 +32,10 @@ const NavManu = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link className='text-decoration-none'>
-                            <Link  className='text-decoration-none' to='courses'>COURSES</Link>
+                            <Link className='text-decoration-none' to='courses'>COURSES</Link>
                         </Nav.Link>
                         <Nav.Link>
-                            <Link  className='text-decoration-none' to='faq'>FAQ</Link>
+                            <Link className='text-decoration-none' to='faq'>FAQ</Link>
                         </Nav.Link>
                         <Nav.Link>
                             <Link className='text-decoration-none' to='/blog'>BLOG</Link>
@@ -61,7 +62,10 @@ const NavManu = () => {
                                 delay={{ show: 250, hide: 400 }}
                                 overlay={renderTooltip}
                             >
-                                <Button><HiOutlineUserCircle></HiOutlineUserCircle></Button>
+                                <Nav.Link>
+                                    <FaUserAlt></FaUserAlt>
+                                </Nav.Link>
+
                             </OverlayTrigger>
 
 
