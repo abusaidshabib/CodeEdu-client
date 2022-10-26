@@ -8,7 +8,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const NavMenu = () => {
-    const { logOut,user } = useContext(AuthContext);
+    const { logOut, user } = useContext(AuthContext);
 
     const renderTooltip = (props) => (
 
@@ -61,24 +61,20 @@ const NavMenu = () => {
                             >
                                 <Nav.Link>
                                     {
-                                        user?.photoURL?
-                                        <img src={user.photoURL} class="img-fluid img-thumbnail" alt=""></img>
-                                        :
-                                        <FaUserAlt></FaUserAlt>
+                                        user?.photoURL ?
+                                            <img src={user.photoURL} className="img-fluid img-thumbnail" alt=""></img>
+                                            :
+                                            <FaUserAlt></FaUserAlt>
                                     }
                                 </Nav.Link>
 
                             </OverlayTrigger>
                         </div>
                         <Nav.Link eventKey={2} href="#memes">
-                            <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
-                                <ToggleButton id="tbg-radio-2" value={2}>
-                                    <HiSun></HiSun>
-                                </ToggleButton>
-                                <ToggleButton id="tbg-radio-3" value={3}>
-                                    <BsFillMoonFill></BsFillMoonFill>
-                                </ToggleButton>
-                            </ToggleButtonGroup>
+                            <div className="form-check form-switch">
+                                <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                                <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark</label>
+                            </div>
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

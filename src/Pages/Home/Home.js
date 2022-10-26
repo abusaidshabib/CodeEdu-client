@@ -8,7 +8,7 @@ const Home = () => {
             <div className="px-4 py-5 my-5 text-center">
                     <h1 className="display-5 fw-bold">CodEdu</h1>
                     <div className="col-lg-6 mx-auto">
-                        <p className="lead mb-4">We help to grow your knowledge and help to push to the top. Here we will help you to learn about react app. So, You must have to learn JavaScript, html, css must.</p>
+                        <p className="lead mb-4">We help to grow your knowledge and help to push to the top. Here we will help you to learn about JavaScript. So, You must have to basic Knowledge about computer simple works.</p>
                         <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
                                 <Link to="/login" type="button" className="btn btn-primary btn-lg px-4 gap-3">LOG IN</Link>
                                 <Link to="/register" type='button' className="btn btn-outline-secondary btn-lg px-4">REGISTER</Link>
