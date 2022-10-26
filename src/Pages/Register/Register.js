@@ -1,10 +1,18 @@
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 
-    const handleSignUp = () => {
-        console.log('demo');
+    const handleSignUp = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const confirm = form.confirmPass.value;
+        const url = form.url.value;
+        console.log(email, password);
     }
 
     return (
@@ -30,7 +38,7 @@ const Register = () => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formConfirmPassword">
                             <Form.Label>Confirm Password</Form.Label>
-                            <Form.Control name='confirm' type="password" placeholder="Again Type Password" required />
+                            <Form.Control name='confirmPass' type="password" placeholder="Again Type Password" required />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formBasicURL">
                             <Form.Label>Enter Your Photo URL</Form.Label>
@@ -43,6 +51,7 @@ const Register = () => {
                             Errors here
                         </Form.Text>
                     </Form>
+                    <p>Already have an account <Link to='/login'>login form here</Link> </p>
                 </Col>
             </Row>
         </Container>

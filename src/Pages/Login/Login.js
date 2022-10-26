@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 
@@ -35,6 +36,7 @@ const Login = () => {
                                 Your Email Or Password is wrong please check and try again
                             </Form.Text>
                         </Form>
+                        <p>If your are new Then <Link to='/register'>Create a New account</Link> </p>
                     </Col>
                 </Row>
             </Container>
