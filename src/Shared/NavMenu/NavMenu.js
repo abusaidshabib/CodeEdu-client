@@ -7,7 +7,6 @@ import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const NavMenu = () => {
     const { logOut, user } = useContext(AuthContext);
-    console.log(user);
 
     const renderTooltip = (props) => (
 
@@ -69,7 +68,7 @@ const NavMenu = () => {
 
                             </OverlayTrigger>
                         </div>
-                        <Nav.Link className='mt-3' eventKey={2} href="#memes">
+                        <Nav.Link className='mt-2' eventKey={2} href="#memes">
                             <div className="form-check form-switch">
                                 <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark</label>

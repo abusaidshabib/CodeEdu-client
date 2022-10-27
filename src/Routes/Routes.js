@@ -7,7 +7,6 @@ import Home from "../Pages/Home/Home";
 import Lesson from "../Pages/Lesson/Lesson";
 import Login from "../Pages/Login/Login";
 import NotFound from "../Pages/NotFound/NotFound";
-import Premium from "../Pages/Premium/Premium";
 import Register from "../Pages/Register/Register";
 import PrivateRoute from "./PrivateRoute";
 
@@ -52,12 +51,8 @@ export const routes = createBrowserRouter([
                     element: <NotFound></NotFound>
                 },
                 {
-                    path: '/premium',
-                    element: <PrivateRoute><Premium></Premium></PrivateRoute>
-                },
-                {
                     path: '/lesson/:id',
-                    element: <Lesson></Lesson>,
+                    element: <PrivateRoute><Lesson></Lesson></PrivateRoute>,
                     loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
                 }
             ]

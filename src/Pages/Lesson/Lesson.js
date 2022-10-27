@@ -1,24 +1,29 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const Lesson = () => {
     const lessons = useLoaderData();
-    console.log(lessons);
     return (
-        <Container className='text-center my-5'>
-            <h2>{lessons.title}</h2>
-            <h6 className='my-4'>{lessons.details}</h6>
-            <div className='d-flex justify-content-between my-5 align-items-center'>
-                <div className='d-flex justify-content-between align-items-center'>
-                    <img src={lessons.image} alt="" />
-                    <p><b>Writer Name:</b> {lessons.author}</p>
-                </div>
-                <div>
-                    <p><b>view:</b> {lessons.view}</p>
-                </div>
+        <div className="card my-5 container">
+            <h3 className='text-center'>You got premium access for <b>{lessons.course_name}</b></h3>
+            <img src={lessons.title_img} className="card-img-top" alt="..." />
+            <div className="card-body">
+                <h5 className="card-title">{lessons.title}</h5>
+                <p className="card-text">{lessons.details}</p>
+                <Card style={{ width: '18rem' }}>
+                    <Card.Header>More</Card.Header>
+                    <ListGroup variant="flush">
+                        <ListGroup.Item>author: <b>{lessons.author}
+                        <img src={lessons.auth_img} alt=""/>
+                        </b></ListGroup.Item>
+                        <ListGroup.Item>rating: <b>{lessons.rating}</b></ListGroup.Item>
+                        <ListGroup.Item>view: <b>{lessons.view}</b></ListGroup.Item>
+                    </ListGroup>
+                </Card>
             </div>
-        </Container>
+        </div>
     );
 };
 
