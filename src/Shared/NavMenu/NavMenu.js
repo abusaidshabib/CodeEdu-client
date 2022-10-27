@@ -1,7 +1,5 @@
 import React from 'react';
-import { Button, Container, Image, Nav, Navbar, OverlayTrigger, ToggleButton, ToggleButtonGroup, Tooltip } from 'react-bootstrap';
-import { HiSun } from 'react-icons/hi';
-import { BsFillMoonFill } from 'react-icons/bs';
+import { Button, Container, Image, Nav, Navbar, OverlayTrigger, Tooltip } from 'react-bootstrap';
 import { FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
