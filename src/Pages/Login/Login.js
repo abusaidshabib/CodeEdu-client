@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import LoginBtns from '../../Components/Sign/LoginBtns';
 import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const Login = () => {
@@ -33,10 +34,7 @@ const Login = () => {
     return (
         <Container>
             <Row className='row justify-content-between'>
-                <Col lg="4" className='mt-5'>
-                    <Button>Sign In With Google</Button><br></br><br />
-                    <Button>Sign In With Facebook</Button>
-                </Col>
+                <LoginBtns></LoginBtns>
                 <Col lg="5" className='mt-5'>
                     <Form onSubmit={handleLogIn}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">

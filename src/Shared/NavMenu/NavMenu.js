@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Container, Nav, Navbar, OverlayTrigger, ToggleButton, ToggleButtonGroup, Tooltip } from 'react-bootstrap';
+import { Button, Container, Image, Nav, Navbar, OverlayTrigger, ToggleButton, ToggleButtonGroup, Tooltip } from 'react-bootstrap';
 import { HiSun } from 'react-icons/hi';
 import { BsFillMoonFill } from 'react-icons/bs';
 import { FaUserAlt } from 'react-icons/fa';
@@ -9,12 +9,13 @@ import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const NavMenu = () => {
     const { logOut, user } = useContext(AuthContext);
+    console.log(user);
 
     const renderTooltip = (props) => (
 
         <Tooltip id="button-tooltip" {...props}
         >
-            {user?.email}
+            {user?.displayName}
         </Tooltip>
     );
 
@@ -37,7 +38,7 @@ const NavMenu = () => {
                         {
                             user?.uid ?
                                 <>
-                                    <Link className='nav-link'>
+                                    <Link className='nav-link mt-2'>
                                         <Button onClick={logOut} variant='primary'>LogOut</Button>
                                     </Link>
                                 </>
@@ -62,7 +63,7 @@ const NavMenu = () => {
                                 <Nav.Link>
                                     {
                                         user?.photoURL ?
-                                            <img src={user.photoURL} className="img-fluid img-thumbnail" alt=""></img>
+                                            <Image style={{width: '40px'}} roundedCircle src={user.photoURL}></Image>
                                             :
                                             <FaUserAlt></FaUserAlt>
                                     }
@@ -70,7 +71,7 @@ const NavMenu = () => {
 
                             </OverlayTrigger>
                         </div>
-                        <Nav.Link eventKey={2} href="#memes">
+                        <Nav.Link className='mt-3' eventKey={2} href="#memes">
                             <div className="form-check form-switch">
                                 <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
                                 <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark</label>

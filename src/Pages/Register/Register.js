@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { useState } from 'react';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import LoginBtns from '../../Components/Sign/LoginBtns';
 import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const Register = () => {
@@ -43,10 +44,7 @@ const Register = () => {
     return (
         <Container>
             <Row className='row justify-content-between'>
-                <Col lg="4" className='mt-5'>
-                    <Button>Sign In With Google</Button><br /><br />
-                    <Button>Sign In With Facebook</Button>
-                </Col>
+                <LoginBtns></LoginBtns>
                 <Col lg="5" className='mt-5'>
                     <Form onSubmit={handleSignUp}>
                         <Form.Group className="mb-3" controlId="formBasicName">

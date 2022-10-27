@@ -19,7 +19,7 @@ export const routes = createBrowserRouter([
             [
                 {
                     path: '/courses',
-                    loader: async() => fetch('http://localhost:5000/learn-topics'),
+                    loader: async() => fetch('http://localhost:5000/topics'),
                     element: <Courses></Courses>
 
                 },
@@ -56,9 +56,9 @@ export const routes = createBrowserRouter([
                     element: <PrivateRoute><Premium></Premium></PrivateRoute>
                 },
                 {
-                    path: '/topics/:id',
+                    path: '/lesson/:id',
                     element: <Lesson></Lesson>,
-                    loader: ({params}) => fetch(`http://localhost:5000/topics/${params.id}`)
+                    loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
                 }
             ]
     }

@@ -5,7 +5,6 @@ import headerImg from '../../assets/lautaro-andreani-xkBaqlcqeb4-unsplash.jpg';
 
 const Courses = () => {
     const allTopics = useLoaderData();
-    console.log(allTopics);
     return (
         <Container>
             <Row className='row justify-content-between'>
@@ -20,7 +19,7 @@ const Courses = () => {
                     <h3>All Topics</h3>
                     {
                         allTopics.map(topic => <p key={topic.id}>
-                            <Link to={`/topics/${topic.id}`}>{topic.topic_Name}</Link>
+                            <Link to={`/lesson/${topic.id}`}>{topic.topic_Name}</Link>
                         </p>)
                     }
                 </Col>
