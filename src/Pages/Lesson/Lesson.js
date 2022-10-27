@@ -16,7 +16,7 @@ const Lesson = () => {
                     <Card.Header>More</Card.Header>
                     <ListGroup variant="flush">
                         <ListGroup.Item>author: <b>{lessons.author}
-                        <img src={lessons.auth_img} alt=""/>
+                            <img src={lessons.auth_img} alt="" />
                         </b></ListGroup.Item>
                         <ListGroup.Item>rating: <b>{lessons.rating}</b></ListGroup.Item>
                         <ListGroup.Item>view: <b>{lessons.view}</b></ListGroup.Item>
