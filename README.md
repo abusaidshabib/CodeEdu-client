@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Special Features
+1. Get premium access to then access the advance classes
+2. Stay old page after log in
+3. Sign in or log in with github, google or email
+4. Watch name after log in toggle the img
+5. Watch switch button
+6. log in and resister will hide when logged in
+7. click the topic to get the actual course
+8. Custome created 2 api
+9. Complete responsive
