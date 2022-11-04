@@ -11,6 +11,17 @@ const UserContext = ({children}) => {
 const [user, setUser] = useState(null);
 const [loading, setLoading] = useState(true);
 
+const [mode, setMode] = useState('light');
+
+const toggleMode = () => {
+    if(mode === 'light'){
+        setMode('dark');
+    }
+    else{
+        setMode('light');
+    }
+}
+
 const createUser = (email, password) =>{
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -43,7 +54,7 @@ useEffect(()=>{
     return () => unSubscribe();
 },[])
 
-const authInfo = {user, loading, createUser, signInUser, logOut, providerLogin, gitProviderLogin};
+const authInfo = {user, toggleMode, loading, mode, createUser, signInUser, logOut, providerLogin, gitProviderLogin};
 
     return (
         <AuthContext.Provider value={authInfo}>

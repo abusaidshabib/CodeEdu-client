@@ -1,11 +1,11 @@
 import React from 'react';
 import { useContext } from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import {Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Context/UserContext/UserContext';
 
 const Home = () => {
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(AuthContext);
     return (
         <Container>
             <div className="px-4 py-5 my-5 text-center">
@@ -21,26 +21,13 @@ const Home = () => {
                                 :
                                 <>
                                     <Link to="/login" type="button" className="btn btn-primary btn-lg px-4 gap-3">LOG IN</Link>
-                                    <Link to="/register" type='button' className="btn btn-outline-secondary btn-lg px-4">REGISTER</Link>
+                                    <Link to="/register" type='button' className="btn btn-info btn-lg px-4">REGISTER</Link>
                                 </>
                         }
 
                     </div>
                 </div>
             </div>
-
-            {/* <Row>
-                <Col style={{height: '82vh'}} lg="6">
-                    <Row className=''>
-                        <h1 className='fw-bold'> We help to grow your knowledge and help to push to the top</h1>
-                    </Row>
-                    <Row>
-                        <p>Make trust and relation to build a easy life.
-                            We are always ready to help you.</p>
-                    </Row>
-                </Col>
-                <Col lg="6" className='bg-danger'></Col>
-            </Row> */}
         </Container>
     );
 };

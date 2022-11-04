@@ -18,7 +18,7 @@ export const routes = createBrowserRouter([
             [
                 {
                     path: '/courses',
-                    loader: async() => fetch('http://localhost:5000/topics'),
+                    loader: async() => fetch('https://client-server-site.vercel.app/topics'),
                     element: <Courses></Courses>
 
                 },
@@ -53,7 +53,7 @@ export const routes = createBrowserRouter([
                 {
                     path: '/lesson/:id',
                     element: <PrivateRoute><Lesson></Lesson></PrivateRoute>,
-                    loader: ({params}) => fetch(`http://localhost:5000/details/${params.id}`)
+                    loader: ({params}) => fetch(`https://client-server-site.vercel.app/details/${params.id}`)
                 }
             ]
     }
