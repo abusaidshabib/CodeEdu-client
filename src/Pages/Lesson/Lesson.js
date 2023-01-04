@@ -18,7 +18,6 @@ const Lesson = () => {
 
     return (
         <div className="card my-5 container">
-<<<<<<< HEAD
             <Container>
                 <Row>
                     <Col sm={8}></Col>
@@ -47,23 +46,6 @@ const Lesson = () => {
                         </ListGroup>
                     </Card>
                 </div>
-=======
-            <h3 className='text-center'>You got premium access for <b>{lessons.course_name}</b></h3>
-            <img src={lessons.title_img} className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h5 className="card-title">{lessons.title}</h5>
-                <p className="card-text">{lessons.details}</p>
-                <Card style={{ width: '18rem' }}>
-                    <Card.Header>More</Card.Header>
-                    <ListGroup variant="flush">
-                        <ListGroup.Item>author: <b>{lessons.author}
-                            <img src={lessons.auth_img} alt="" />
-                        </b></ListGroup.Item>
-                        <ListGroup.Item>rating: <b>{lessons.rating}</b></ListGroup.Item>
-                        <ListGroup.Item>view: <b>{lessons.view}</b></ListGroup.Item>
-                    </ListGroup>
-                </Card>
->>>>>>> 89e46c5d218e579aa1ec3cceb49b643e379a4002
             </div>
         </div>
     );
